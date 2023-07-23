@@ -1,0 +1,95 @@
+<nav class="navbar navbar-expand-lg bg-dark">
+    <ng-container *ngIf="role=='Default'">
+        <div class="container-fluid">
+            <a class="navbar-brand text-bold" href="/login">
+                <img
+                    src="https://15logo.net/wp-content/uploads/2016/12/MediCare-800x800.jpg"
+                    width="75" alt="logo">
+            </a>
+            <a class="navbar-brand text-white font-weight-bold"
+                routerLink="/login">Medicare</a>
+            <button class="navbar-toggler" type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            </div>
+        </div>
+    </ng-container>
+    <ng-container *ngIf="role=='Admin'">
+        <div class="container-fluid">
+            <a class="navbar-brand text-bold" href="/home">
+                <img
+                    src="https://15logo.net/wp-content/uploads/2016/12/MediCare-800x800.jpg"
+                    width="75" alt="logo">
+            </a>
+            <a class="navbar-brand text-white font-weight-bold"
+                routerLink="/sellers">Medicare</a>
+            <button class="navbar-toggler" type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item" routerLinkActive="active">
+                        <a class="nav-link text-white" routerLink="/sellers">Sellers</a>
+                    </li>
+                    <li class="nav-item" routerLinkActive="active">
+                        <a class="nav-link text-white"
+                            routerLink="/categories">Categories</a>
+                    </li>
+                    <li class="nav-item" routerLinkActive="active">
+                        <a class="nav-link text-white"
+                            routerLink="/products">
+                            Products</a>
+                    </li>
+                    <li class="nav-item" routerLinkActive="active">
+                        <a class="nav-link text-white">
+                            <button (click)="Logout()" class="btn btn-light">Logout</button>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </ng-container>
+    <ng-container *ngIf="role=='User'">
+        <div class="container-fluid">
+            <a class="navbar-brand text-bold" href="/home">
+                <img
+                    src="https://15logo.net/wp-content/uploads/2016/12/MediCare-800x800.jpg"
+                    width="75" alt="logo">
+            </a>
+            <a class="navbar-brand text-white font-weight-bold"
+                routerLink="/home">Medicare</a>
+            <button class="navbar-toggler" type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item" routerLinkActive="active">
+                        <a class="nav-link text-white" routerLink="/productslist">Products</a>
+                    </li>
+                    <li class="nav-item" routerLinkActive="active">
+                        <a class="nav-link text-white" routerLink="/cart">
+                            Cart</a>
+                    </li>
+                    <li class="nav-item" routerLinkActive="active">
+                        <a class="nav-link text-white">
+                            <button (click)="Logout()" class="btn btn-light">Logout</button>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </ng-container>
+</nav>

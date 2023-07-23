@@ -1,0 +1,88 @@
+<br>
+<div class="bg-secondary">
+    <div class="container d-flex align-items-center justify-content-center">
+        <div class="form-group bg-secondary w-75 p-3 ">
+            <br>
+            <div class="row bg-light searchheight rounded">
+                <div class="col-4">
+                    <br>
+                    <input class="form-control" type="text" name="search"
+                        [(ngModel)]="searchText"
+                        placeholder="Search for a product">
+                </div>
+                <div class="col-2">
+                    Sort
+                    <select class="form-control"
+                        [(ngModel)]="sort" name="seller_id"
+                        required>
+                        <option value="seller_id"
+                            [ngValue]="1">Price low to high</option>
+                        <option value="seller_id"
+                            [ngValue]="2">Price high to Low</option>
+                    </select>
+                </div>
+                <div class="col-2">
+                    Seller
+                    <select class="form-control"
+                        [(ngModel)]="seller_id" name="seller_id"
+                        required>
+                        <option *ngFor="let seller of sellers" value="seller_id"
+                            [ngValue]="seller.id">{{seller.sellerName}}</option>
+                    </select>
+                </div>
+                <div class="col-2">
+                    Category
+                    <select class="form-control"
+                        [(ngModel)]="category_id"
+                        name="category_id" required>
+                        <option *ngFor="let Category of category"
+                            value="category_id"
+                            [ngValue]="Category.id">{{Category.category}}</option>
+                    </select>
+                </div>
+                <div class="col-2">
+                    <br>
+                    <button class="btn btn-dark" (click)="search()">Search</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div
+        class="container align-items-center justify-content-center w-75 p-3">
+        <div *ngFor="let product of products">
+            <div class="row bg-white rounded height">
+                <div class="col">
+                    <img
+                        src="http://www.clker.com/cliparts/7/6/0/4/12918673831512302000pill-icon-md.png"
+                        alt class="img" width="50%">
+                </div>
+                <div class="col-5">
+                    <p class="h1">{{product.name}}</p>
+                    <hr><p class="fs-5">{{product.description}}</p>
+                    <hr><p>Price: {{product.price}}rs</p>
+                </div>
+                <div class="col container">
+                    <br><hr>
+                    <div class="row">
+                        <div class="col-sm btn-right">
+                            <button class="btn btn-dark btn-lg float-right"
+                                (click)="remove(product.id)">-</button>
+                        </div>
+                        <div
+                            class="col-sm border border-dark rounded text-center">
+                            {{counter[product.id]||0}}
+                        </div>
+                        <div class="col-sm">
+                            <button class="btn btn-dark btn-lg"
+                                (click)="add(product.id)">+</button>
+                        </div>
+                    </div>
+                    <hr>
+                </div>
+            </div>
+            <br>
+        </div>
+    </div>
+    <br>
+</div>

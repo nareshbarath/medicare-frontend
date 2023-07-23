@@ -1,0 +1,28 @@
+<br><br><br>
+<div class="container d-flex align-items-center justify-content-center">
+    <div class="p-5 m-5 shadow rounded-2 bg-dark text-white">
+        <h3>Medicare Login</h3>
+        <form #loginForm="ngForm" (ngSubmit)="(submit(loginForm))">
+            <div class="form-group">
+                <lable for="email">Email</lable>
+                <input required type="text" name="email" class="form-control"
+                    ngModel>
+            </div>
+            <div class="form-group">
+                <lable for="password">Password</lable>
+                <input required type="password" name="password"
+                    class="form-control" ngModel>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col">
+                    <button class="btn btn-primary" type="submit">Submit</button>
+                </div>
+                <div class="col">
+                    <button class="btn btn-primary" type="button"
+                        (click)="register()">Register</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,42 @@
+<div *ngIf="cart.length==0">
+    <br><br>
+    <div class="container d-flex align-items-center justify-content-center">
+        <h1>There are no items in the cart</h1>
+    </div>
+</div>
+<div *ngIf="cart.length>0"
+    class="container align-items-center justify-content-center">
+    <br>
+    <table class="table table-striped table-dark">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Product Name</th>
+                <th scope="col">Price</th>
+                <th scope="col">Count</th>
+                <th scope="col">Subtotal</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let product of cart">
+                <td scope="row">{{product.id}}</td>
+                <td>{{product.name}}</td>
+                <td>{{product.price}}</td>
+                <td> {{product.count}}</td>
+                <td>{{product.subtotal}}</td>
+            </tr>
+        </tbody>
+    </table>
+    <br>
+    <h2 class="bg-dark text-white">Order Total: {{total}}</h2><br>
+    <div>
+        Name: <input type="text" required>
+        Phone: <input type="text" required>
+        Email: <input type="email" required>
+        Address: <input type="text" required>
+    </div>
+    <br>
+    <button class="btn btn-dark btn-outline-secondary btn-lg"
+        (click)="payment()">Place
+        your order and pay</button>
+</div>
